@@ -1,19 +1,22 @@
 cmake_minimum_required(VERSION 3.4.3)
 
-#set(CAMKE_CXX_FLAGS "$((CAMKE_CXX_FLAGS ) -Wall -O2")
+#set(CAMKE_CXX_FLAGS "$(CAMKE_CXX_FLAGS ) -std=c++11 -Wall -o2")
 
 project(grahic)
 
 #eux_source_directory(. SRC_LIST)
-file(GLOB SRC_LIST "*.cpp" "src/*.cpp")
+file(GLOB SRC_LIST *.cpp src/*.cpp)
 
-add_executable(${project} $(SRC_LIST))
+message("source files: " ${SRC_LIST})
+message("project: " ${project})
+
+add_executable(graphic ${SRC_LIST})
 #add_library()
 
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(./include)
 
-target_link_libraries()
+target_link_libraries(graphic)
 
 
 
